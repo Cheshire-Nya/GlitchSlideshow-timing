@@ -2,6 +2,8 @@
 
 A slideshow that uses the [CSS Glitch Effect](https://tympanus.net/codrops/2017/12/21/css-glitch-effect/) to transition between slides.
 
+**原版基础上把`demo1.js`改成了4.5秒切换下一张图**
+
 ![Glitch Slideshow](https://tympanus.net/codrops/wp-content/uploads/2018/03/GlitchSlideshow_featured.jpg)
 
 [Article on Codrops](https://tympanus.net/codrops/?p=34273)
