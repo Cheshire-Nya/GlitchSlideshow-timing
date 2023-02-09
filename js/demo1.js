@@ -27,14 +27,20 @@
 
     class GlitchSlideshow {
         constructor(el) {
-            this.DOM = {el: el};
-            this.DOM.slides = Array.from(this.DOM.el.querySelectorAll('.slide'));
-            this.slidesTotal = this.DOM.slides.length;
-            this.slides = [];
-            this.DOM.slides.forEach(slide => this.slides.push(new Slide(slide)));
-            this.current = 0;
-            this.glitchTime = 1200;
-            this.totalGlitchSlices = 5;
+        this.DOM = {el: el};
+        this.DOM.slides = Array.from(this.DOM.el.querySelectorAll('.slide'));
+        this.slidesTotal = this.DOM.slides.length;
+        this.slides = [];
+        this.DOM.slides.forEach(slide => this.slides.push(new Slide(slide)));
+        this.current = 0;
+        this.glitchTime = 1200;
+        this.totalGlitchSlices = 5;
+        
+        // 定时器
+        this.interval = setInterval(() => {
+            // 切换到下一张图片
+            this.navigate((this.current + 1) % this.slidesTotal);
+        }, 4500); // 每4.5秒切换一次
         }
         glitch(slideFrom, slideTo) {
             return new Promise((resolve, reject) => {
